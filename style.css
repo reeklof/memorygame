@@ -1,0 +1,365 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lobster';
+}
+  
+body {
+    background-color: black;
+    height: 100vh;
+    font-size: 62.5%;
+}
+
+/* points */
+.points-time {
+    padding: 3em 0em 0 3em;
+    color: #2ac45a;
+}
+
+.points {
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Lobster';
+    padding-left: 1em;
+    display: flex; 
+}
+
+/* timer */
+#countdown {
+    position: absolute; 
+    margin: auto;
+    margin-top: 100px;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+}
+
+#timer {
+    display: inline-block;
+    line-height: 80px;
+    font-size: 40px;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+svg circle {
+    stroke-dasharray: 223px; 
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 3px;
+    stroke: white;
+    fill: none;
+    animation: countdown 30s linear infinite forwards;
+}
+
+@keyframes countdown {
+    from {
+    stroke-dashoffset: 0px;
+    }
+    to {
+    stroke-dashoffset: 213px;
+    }
+}
+/* cards */
+.memory {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.container {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px #000000;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .1s;
+
+    -ms-transform: transform .1s;
+    -webkit-transform: transform .1s;
+    -moz-transform: transform .1s;
+    -o-transform: transform .1s;
+
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+}
+
+.container.flip {
+    transform: rotateY(180deg);
+
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+}
+  
+.container:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+    
+    -ms-transform: scale(0.97);
+    -webkit-transform: scale(0.97);
+    -moz-transform: scale(0.97);
+    -o-transform: scale(0.97);
+    
+    -ms-transform: transform .2s;
+    -webkit-transform: transform .2s;
+    -moz-transform: transform .2s;
+    -o-transform: transform .2s;
+}
+
+.disabled {
+    visibility: hidden;
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+.front {
+    transform: rotateY(180deg)
+}
+
+/* result */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #000000; /* Fallback color */
+    background-color: #000000; /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    font-size: 20px;
+    background-color: #724b86;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    color: #2ac45a;
+}
+
+/* The Close Button */
+.close {
+    color: #2ac45a;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 10px 10px;
+    padding-top: 15px;
+}
+
+.close:hover,
+.close:focus {
+    color: #3ce682;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* starpage */
+.main-container { /* desktop */
+    max-width: 84rem;
+    margin: 0 auto;
+}
+
+h1 {
+    color: white;
+    font-size: 13rem;
+    text-align: center;
+    margin-top: 3rem;
+    font-family: 'Lobster', cursive;
+}
+.rules {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Lobster';
+    padding: 1px 13px;
+    margin: 1rem 0;
+}
+
+.button-wrapper {
+    text-align: center;
+    margin: 5rem 0;
+}
+
+a {
+    background-color: #2ac45a;
+    font-size: 3rem;
+    text-align: center;
+    border-radius: 16px;
+    padding: 5px 13px;
+    font-family: 'Lobster', cursive;
+    transition: all 0.5s ease-in-out; 
+}
+
+a:hover {
+    background-color: #7253ab;
+}
+
+@media (max-width: 800px) {
+    .points-time {
+        padding: 0;
+        width: 100%;
+    }
+
+    .points {
+        margin: 1em 0 0 1em;
+        float: left;
+        font-size: 2em;
+        position: absolute;
+    }
+
+    #countdown {
+        margin: 1.8em 39%;
+    }
+
+    .memory {
+        width: 100%;
+        height: 80%;
+        position: absolute;
+        margin: 5em 0;
+    }
+}
+@media screen and (max-width: 768px) { /*ipad*/
+    .main-container { 
+        max-width: 84rem;
+        margin: 0 auto;
+    }
+    h1 {
+        color: white;
+        font-size: 8rem;
+        text-align: center;
+        margin-top: 10rem;
+        font-family: 'Lobster', cursive;
+    }
+    .rules {
+        color: white;
+        font-size: 1.7rem;
+        text-align: center;
+        font-family: 'Lobster';
+        padding: 5px 13px;
+        margin: 8rem 5rem;
+    }
+    .button-wrapper {
+        text-align: center;
+        margin: 8rem 0;
+    }
+    
+    a {
+        background-color: #2ac45a;
+        font-size: 2rem;
+        text-align: center;
+        border-radius: 16px;
+        padding: 5px 13px;
+        font-family: 'Lobster', cursive;
+        transition: all 0.5s ease-in-out; 
+    }
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+a:active {
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 480px) { /* iphone */
+    .memory {
+        width: 100%;
+        height: 50%;
+        margin: 10em 0;
+    }
+    
+    .front, .back {
+        width: 90%;
+    }
+
+    .close {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0 0 10px;
+    }
+
+    .modal-content {
+        margin-bottom: 10px;
+    }
+
+    .modal-content h4{
+        width: 100%;
+        margin-top: 90px;
+        text-align: center;
+    }
+
+    .modal-content div {
+        text-align: center;
+    }
+
+    h1 {
+        color: white;
+        font-size: 6em;
+        text-align: center;
+        margin-top: 2rem;
+        font-family: 'Lobster', cursive;
+    }
+    .rules {
+        color: white;
+        font-size: 1rem;
+        text-align: center;
+        font-family: 'Lobster';
+        padding: 5px 13px;
+        margin: 0 5rem;
+    }
+    .button-wrapper {
+        text-align: center;
+        margin: 3rem 0;
+    }
+    
+    a {
+        background-color: #2ac45a;
+        font-size: 1.6rem;
+        text-align: center;
+        border-radius: 16px;
+        padding: 4px 10px;
+        font-family: 'Lobster', cursive;
+        transition: all 0.5s ease-in-out; 
+    }
+}

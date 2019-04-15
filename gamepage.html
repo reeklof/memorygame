@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        <title>Movie Memory Game - Game</title>
+    </head>
+    <body>
+        <div class="points-time">
+            <h2 class="points" id="result"></h2>
+            <div id="countdown">
+                <div id="timer"></div>
+                <svg>
+                    <circle r="36" cx="40" cy="40"></circle>
+                </svg>
+            </div>
+        </div>
+        <section class="memory">
+            <div class="container" >
+                <img id="thing" class="card front" alt="The Thing" src="images/Thething.jpeg">
+                <img class="card back" alt="Mem" src="images/movie-reel.png">
+            </div>
+            <div class="container">
+                <img id="thing" class="card front" alt="The Thing" src="images/Thething.jpeg">
+                <img class="card back" alt="Mem" src="images/movie-reel.png">
+            </div>
+            <div class="container">
+                <img id="cujo" class="card front" alt="Cujo" src="images/cujo.jpg">
+                <img class="card back" alt="Mem" src="images/movie-reel.png">
+            </div>
+            <div class="container">
+                <img id="cujo" class="card front" alt="Cujo" src="images/cujo.jpg">
+                <img class="card back" alt="Mem" src="images/movie-reel.png">
+            </div>
+            <div class="container">
+                <img id="ghost" class="card front" alt="Ghostbusters" src="images/ghostbuster.jpg">
+                <img class="card back" alt="Mem" src="images/movie-reel.png">
+            </div>
+            <div class="container">
+                <img id="ghost" class="card front" alt="Ghostbusters" src="images/ghostbuster.jpg">
+                <img class="card back" alt="Mem" src="images/movie-reel.png">
+            </div>
+            <div class="container">
+                <img  id="star" class="card front" alt="Star Trek II" src="images/startrek2.jpg">
+                <img class="card back" alt="Mem" src="images/movie-reel.png">
+            </div>
+            <div class="container">
+                <img id="star" class="card front" alt="Star Trek II" src="images/startrek2.jpg">
+                <img class="card back" alt="Mem" src="images/movie-reel.png">
+            </div>
+            <div class="container">
+                <img id="shin" class="card front" alt="Shining" src="images/theshining.jpg">
+                <img class="card back" alt="Mem" src="images/movie-reel.png">
+            </div>
+            <div class="container">
+                <img id="shin" class="card front" alt="Shining" src="images/theshining.jpg">
+                <img class="card back" alt="Mem" src="images/movie-reel.png">
+            </div>
+            <div class="container">
+                <img id="dance" class="card front" alt="Dirty Dancing" src="images/dirtydancing.jpg">
+                <img class="card back" alt="Mem" src="images/movie-reel.png">
+            </div>
+            <div class="container">
+                <img id="dance" class="card front" alt="Dirty Dancing" src="images/dirtydancing.jpg">
+                <img class="card back" alt="Mem" src="images/movie-reel.png">
+            </div>
+        </section>
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+              <span class="close" onClick="window.location.reload()">Reset</span>
+              <span class="close" onclick="window.location='startpage.html';">Startpage</span>
+              <h4>The end is here!</h4>
+              <div>Points: <span id="end-result"></span></div>
+              <div>Time: <span id="end-time"></span></div>
+            </div>
+          
+          </div>
+        <script src="js.js"></script>
+    </body>
+</html>
